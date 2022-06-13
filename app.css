@@ -1,0 +1,514 @@
+/* set up fonts family */
+@font-face {
+    font-family: Description;
+    src: url(./fonts/BerlinSansFB/BerlinSansFBDemiBold.ttf);
+}
+
+@font-face {
+    font-family: Primary;
+    src: url(./fonts/MyriadPro/MyriadProRegular.ttf);
+}
+
+@font-face {
+    font-family: Title;
+    src: url(./fonts/Bauhau93/Bauhaus93Regular.ttf);
+}
+
+body {
+    font-family: Primary;
+    color: var(--text-color);
+    font-size: 15px;
+    line-height:30px;
+    height:100%;
+    background-image: url(./images/bg-main.png);
+}
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+:root {
+    --text-color: #ffffff;
+    --primary-bg: #ffa230;
+    --secondary-bg: #5d110f;
+    --logo-size: 75px;
+    --gutter: 26px;
+}
+
+/*  Set up container - row - column */
+.container {
+    width: 1240px;
+    margin-left: auto;
+    margin-right: auto;                    /* thuoc tinh auto la set size phu thuoc phan tu Child element */
+
+    padding-left: calc(var(--gutter) / 2);
+    padding-right: calc(var(--gutter) / 2);
+}
+
+.row {
+    display: flex;
+    flex-direction: row;
+
+    margin-left: calc(var(--gutter) / -2);
+    margin-right: calc(var(--gutter) / -2);                      /*  Do container padding left, right with 5px               */
+}
+
+ /* Setting column width with padding and margin */
+
+ [class*="col-"] {
+  padding-left: calc(var(--gutter) / 2);
+  padding-right: calc(var(--gutter) / 2);
+  margin-top: 10px;
+}
+
+/* Column settings */
+.col-1 {
+    width: calc(100% / 12);
+  }
+  
+  .col-2 {
+    width: calc(2 * ( 100% / 12 ));
+  }
+  
+  .col-3 {
+    width: calc(3 * ( 100% / 12 ));
+  }
+  
+  .col-4 {
+    width: calc(4 * ( 100% / 12 ));
+  }
+  
+  .col-5 {
+    width: calc(5 * ( 100% / 12 ));
+  }
+  
+  .col-6 {
+    width: calc(6 * ( 100% / 12 ));
+  }
+  
+  .col-7 {
+    width: calc(7 * ( 100% / 12 ));
+  }
+  
+  .col-8 {
+    width: calc(8 * ( 100% / 12 ));
+  }
+  
+  .col-9 {
+    width: calc(9 * ( 100% / 12 ));
+  }
+  
+  .col-10 {
+    width: calc(10 * ( 100% / 12 ));
+  }
+  
+  .col-11 {
+    width: calc(11 * ( 100% / 12 ));
+  }
+  
+  .col-12 {
+    width: 100%;
+  }
+  
+  .offset-1 {
+    margin-left: calc(100% / 12);
+  }
+  
+  .offset-2 {
+    margin-left: calc(2 * ( 100% / 12 ));
+  }
+
+
+  /* utility functions */
+
+.text-center {
+    text-align: center;
+}
+
+.text-right {
+    text-align: right;
+}
+
+.text-left  {
+    text-align: left;
+}
+
+.justify-content-center {
+    justify-content: center;
+}
+
+.justify-content-around {
+  justify-content: space-around;
+}
+
+.justify-content-between {
+    justify-content: space-between;
+}
+
+.j-end {
+    justify-content: flex-end;
+}
+
+.j-start {
+    justify-content: flex-start;
+}
+
+.align-items-center {
+    align-items: center;
+}
+
+.a-end {
+    align-items: flex-end;
+}
+
+.d-flex {
+    display: flex;
+    flex-direction: row;
+}
+
+.flex-column {
+    flex-direction: column;
+}
+
+.flex-wrap {
+    flex-wrap: wrap;
+}
+
+/* Position */
+
+.relative {
+    position: relative;
+}
+
+.absolute {
+    position: absolute;
+}
+
+nav li, 
+nav a,
+ul li,
+a {
+    list-style-type: none;
+    list-style-position: inside;
+    text-decoration: none;
+    color: var(--text-color);
+}
+
+/* Typography */
+.weight-600 {
+    font-weight: 600;
+}
+
+.size-60 {
+    font-size: 60px;
+}
+
+.price-style {
+    font-size:33px;
+    color: var(--primary-bg);
+    font-weight:500;
+}
+
+/* margin and padding */
+.mleft-20 {
+    margin-left: 20px;
+}
+
+.mleft-auto {
+    margin-left: auto;
+}
+
+.mleft-15 {
+    margin-left: 15px;
+}
+
+.mright-auto {
+    margin-right:auto;
+}
+
+.mright-10 {
+    margin-right:10px;
+}
+
+.mright-45 {
+    margin-right: 45px;
+}
+
+.ptop-45 {
+    padding-top:45px;
+}
+
+.mtop-30 {
+    margin-top: 30px;
+}
+
+.mtop-60 {
+    margin-top: 60px;
+}
+
+.mtop-auto {
+    margin-top: auto;
+}
+
+.mbot-30 {
+    margin-bottom: 30px;
+}
+
+/* Header */
+
+.logo-section {
+    margin-top: 40px;
+}
+
+.logo-section img {
+    width: var(--logo-size);
+    border-radius: 50%;
+}
+
+.main-text-color {
+    color: var(--text-color);
+}
+
+.secondary-text-color {
+    color: var(--primary-bg);
+}
+
+.nav-item {
+    margin-right: 40px;
+}
+
+.nav-item:hover .nav-link {
+    color: var(--primary-bg);
+}
+
+.search-box {
+    font-size: 23px !important;
+    color: var(--secondary-bg);
+}
+
+.bg-primary {
+    background-color: var(--primary-bg);
+}
+
+.border-icon {
+    display: block-inline;
+    border-radius: 5px;
+}
+
+.nav-link {
+    font-weight: 500;
+}
+
+.nav-item {
+    margin-right:60px;
+}
+
+.price-total {
+    font-size: 15px;
+    border-radius: 5px;
+    padding-right: 5px;
+}
+
+/* hero-section */
+.sub-menu-items {
+    display: none;
+}
+
+/* khi hover sub menu se show ra sub menu items */
+.inline-menu:hover .sub-menu-items {
+    display: block;
+    transition-delay: 0.3s;
+}
+
+.sub-menu-items {
+    position: absolute;
+    top:0;
+    left: 80px;
+}
+
+.inline-menu-item:hover {
+    color: var(--primary-bg);
+}
+
+.icon-dish {
+    background-image: url(./images/cow-icon.png);
+    background-color: transparent;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-position: 50% 50%;
+    height: 100px;
+    width: 100px;
+}
+
+.dish-title {
+    font-family: Title;
+    font-size: 80px;
+    font-weight: 500;
+}
+
+/* order section */
+.order-item1 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    border: 1px solid var(--primary-bg);
+    background-color: var(--primary-bg);
+    border-radius: 15px;
+    color: var(--primary-bg);
+    cursor: pointer;
+}
+
+.order-item2 {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 200px;
+    border: 1px solid var(--secondary-bg);
+    background-color: var(--secondary-bg);
+    border-radius: 15px;
+    color: var(--secondary-bg);
+    cursor: pointer;
+}
+
+.order-item1 a {
+    display: inline-block;
+    color: var(--secondary-bg);
+}
+
+.order-item2 a {
+    display: inline-block;
+    color: var(--primary-bg);
+}
+
+.price-item {
+    border-bottom: 1px solid var(--primary-bg);
+    padding-bottom: 30px;
+}
+
+.change-quantity {
+    display: flex;
+    border: 1px solid var(--text-color);
+    border-radius: 20px;
+    background-color: var(--text-color);
+    color: var(--secondary-bg);
+    width: 170px;
+    cursor: pointer;
+}
+
+.icon {
+    height: 80%;    
+    width: 30%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.plus-icon {
+    border-right: 1px solid var(--secondary-bg);
+}
+
+.minus-icon {
+    border-left: 1px solid var(--secondary-bg);
+}
+
+.quantity-item {
+    border-bottom: 1px solid var(--primary-bg);
+    padding-bottom: 30px;
+    margin-top: 30px;
+}
+
+/* Order active */
+.order-active {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    position: relative;
+    background-color: var(--primary-bg);
+    border-radius: 8px;
+    color: var(--secondary-bg);
+    margin-top: 30px;
+    text-transform: uppercase;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    cursor: pointer;
+}
+
+.btn-icon {
+    background-color: var(--text-color);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 8px;
+    width:30px;
+    height:30px;
+    position: absolute;
+    right:5px;
+    top:5px;
+}
+
+/* dish image */
+
+.dish-img {
+    background-image: url(./images/bun-bo-2.png);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent;
+    width: 600px;
+    height: 600px;
+}
+
+.dish-img-container {
+    margin-top: 200px;
+}
+
+/* optional section */
+.optional-section {
+    margin-top:320px;
+    margin-left: 50px;
+}
+
+.toping1 {
+    background-image: url(./images/goi-cuon.png);
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    background-size: contain;
+    background-color: transparent;
+    width: 60px;
+    height: 60px;
+}
+
+.optional-text {
+    color: var(--primary-bg);
+    font-weight: 700;
+}
+
+.toping-name {
+    font-weight:700;
+    font-size:18px;
+}
+
+.toping-ad {
+    font-weight: 300;
+    font-size: 11px;
+}
+
+.toping-info {
+    background-color: var(--secondary-bg);
+    border-radius:8px;
+    margin-top: 15px;
+    cursor: pointer;  
+}
+
+.btn-action {
+    width: 20px;
+    height: 20px;
+    margin-left: auto;
+    padding-right:10px;    
+}
+
+
+
